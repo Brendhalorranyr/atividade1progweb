@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 1 Programação Web</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Controle de Gastos</h1>
+      </header>
+      <main class="content-container">
+        <div class="controle-gastos">
+
+          <!-- CRIAÇÃO GASTO -->
+
+          <div class="adiciona-gasto">
+            <form id="form-gasto" class="form-gasto">
+              <div class="container-input">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" />
+              </div>
+
+              <div class="container-input">
+                <label for="descricao">Descricao</label>
+                <input type="text" id="descricao" name="descricao" />
+              </div>
+
+              <div class="container-input">
+                <label for="data">Data</label>
+                <input type="date" id="data" name="data" />
+              </div>
+
+              <div class="container-input">
+                <label for="valor">Valor</label>
+                <input type="number" id="valor" name="valor" />
+              </div>
+
+              <div class="container-input">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" name="categoria">
+                  <option value="" disabled selected hidden>
+                    Selecione uma categoria
+                  </option>
+                  <option value="Doméstico">Doméstica</option>
+                  <option value="Saúde">Saúde</option>
+                  <option value="Lazer">Lazer</option>
+                </select>
+              </div>
+              <div class="container-input-condicional">
+                <label id="label_condicional" for="input_condicional"
+                  >label condicional</label
+                >
+                <input
+                  type="text"
+                  id="input_condicional"
+                  name="input_condicional"
+                />
+                <select id="select_condicional" name="categoria_condicional">
+                  <option value="" disabled selected hidden>
+                    Selecione um tipo
+                  </option>
+                  <option value="Farmácia">Farmácia</option>
+                  <option value="Hospital">Hospital</option>
+                  <option value="Higiene pessoal">Higiene pessoal</option>
+                </select>
+              </div>
+
+              <div class="div-button">
+                <button id="addGastoButton" type="submit">Adicionar Gasto</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- EDIÇÃO GASTO -->
+
+          <div id="edit-container" class="edicao-gasto">
+            <form id="form-gasto-edit" class="form-gasto">
+                <div class="container-input">
+                  <label for="nome_edit">Nome</label>
+                  <input type="text" id="nome_edit" name="nome_edit" />
+                </div>
+  
+                <div class="container-input">
+                  <label for="descricao_edit">Descricao</label>
+                  <input type="text" id="descricao_edit" name="descricao_edit" />
+                </div>
+  
+                <div class="container-input">
+                  <label for="data_edit">Data</label>
+                  <input type="date" id="data_edit" name="data_edit" />
+                </div>
+  
+                <div class="container-input">
+                  <label for="valor_edit">Valor</label>
+                  <input type="number" id="valor_edit" name="valor_edit" step="0.01" />
+                </div>
+  
+                <div class="container-input">
+                  <label for="categoria_edit">Categoria</label>
+                  <select id="categoria_edit" name="categoria_edit">
+                    <option value="" disabled selected hidden>
+                      Selecione uma categoria
+                    </option>
+                    <option value="Doméstica">Doméstica</option>
+                    <option value="Saúde">Saúde</option>
+                    <option value="Lazer">Lazer</option>
+                  </select>
+                </div>
+                <div id="container-input-condicional-edit" class="container-input-condicional">
+                  <label id="label_condicional_edit" for="input_condicional_edit"
+                    >label condicional</label
+                  >
+                  <input
+                    type="text"
+                    id="input_condicional_edit"
+                    name="input_condicional_edit"
+                  />
+                  <select id="select_condicional_edit" name="categoria_condicional_edit">
+                    <option value="" disabled selected hidden>
+                      Selecione um tipo
+                    </option>
+                    <option value="Farmácia">Farmácia</option>
+                    <option value="Hospital">Hospital</option>
+                    <option value="Higiene pessoal">Higiene pessoal</option>
+                  </select>
+                </div>
+  
+                <div class="div-button">
+                  <button type="submit">Salvar Gasto</button>
+                </div>
+              </form>
+          </div>
+        </div>
+
+        <!-- LISTAGEM GASTOS -->
+
+        <div class="gastos">
+          <div class="card">
+            <div class="card-header">
+              <span>Gastos domésticos</span>
+              <input type="search" name="filtro_domestico" id="filtro_domestico" placeholder="Pesquisa por nome">
+            </div>
+
+            <div class="container-lista">
+              <div id="lista_domestico" class="lista"></div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-header">
+              <span>Gastos de saúde</span>
+              <input type="search" name="filtro_domestico" id="filtro_saude" placeholder="Pesquisa por nome">
+            </div>
+
+            <div class="container-lista">
+              <div id="lista_saude" class="lista">
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span>Gastos de Lazer</span>
+              <input type="search" name="filtro_domestico" id="filtro_lazer" placeholder="Pesquisa por nome">
+            </div>
+
+            <div class="container-lista">
+              <div id="lista_lazer" class="lista"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
